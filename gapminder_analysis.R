@@ -2,6 +2,9 @@
 #  January 17, 2017
 #  Author: Olivia McGovern 
 
+# Load necessary packages
+library("ggplot2")
+
 download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "gapminder-FiveYearData.csv")
 gapminder <- read.csv("gapminder-FiveYearData.csv")
 head(gapminder)
@@ -104,7 +107,8 @@ africa_2007[o,]
 
 library("ggplot2")
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
-  geom_point()
+  geom_point() +
+  facetgrid()
 
 #  Plot gapminder, aes = aesthetics ( x axis, y axis) + represent 
 #  plotted data as points
@@ -150,8 +154,16 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
 
 # Color by c ontinent and size by pop  size
 
-#  Notes from Software Carpentry Workshop
 
 
 
+
+library("ggplot2")
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
+  geom_point() + facet_grid(.~continent)
+
+#  save plot, creates file of last plot generated, specifying height
+#  and width dimensions in the specified units
+
+ggsave("year_vs_lifeexp_bycont.png", width = 5, height = 4, units = "in")
 
