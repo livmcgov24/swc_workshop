@@ -6,6 +6,9 @@
 library("ggplot2")
 
 download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "gapminder-FiveYearData.csv")
+
+#  Read in Data file
+
 gapminder <- read.csv("gapminder-FiveYearData.csv")
 head(gapminder)
 
@@ -166,4 +169,5 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
 #  and width dimensions in the specified units
 
 ggsave("year_vs_lifeexp_bycont.png", width = 5, height = 4, units = "in")
+
 
