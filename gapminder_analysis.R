@@ -146,6 +146,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
 
 # Color by c ontinent and size by pop  size
 
+#  Notes from Software Carpentry Workshop
 
 
 
